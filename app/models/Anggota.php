@@ -2,6 +2,6 @@
 
 class Anggota
 {
-    private string $nama = "affan", $alamat = "madiun";
-    private int $noHp = 10293948;
+    private string $nama, $alamat;
+    private int $noHp, $id;
 }
