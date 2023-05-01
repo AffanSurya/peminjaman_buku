@@ -1,6 +1,6 @@
 <?php
 
-require_once 'function/Controller.php';
+require_once 'core/Controller.php';
 
 class Home extends Controller
 {
