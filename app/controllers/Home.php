@@ -1,16 +1,9 @@
 <?php
 
-namespace controllers;
-
-use core\Controller;
+require_once 'function/Controller.php';
 
 class Home extends Controller
 {
-    // public function index()
-    // {
-    //     $this->view('home/index');
-    // }
-
     public function __construct()
     {
         $this->view('home/index');
