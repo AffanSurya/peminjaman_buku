@@ -1,14 +1,12 @@
 <?php
 
-require_once 'core/Controller.php';
-
 class Home extends Controller
 {
-    public function __construct()
+    public function index()
     {
-
-        $this->view('template/header');
+        $data['title'] = 'Home | PinBuk';
+        $this->view('template/header', $data);
         $this->view('home/index');
-        $this->view('template/header');
+        $this->view('template/footer');
     }
 }
