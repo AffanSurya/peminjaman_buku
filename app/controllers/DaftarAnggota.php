@@ -26,4 +26,17 @@ class DaftarAnggota extends Controller
             exit;
         }
     }
+
+    public function ubah()
+    {
+        if ($this->model('AnggotaModel')->ubahAnggota($_POST) > 0) {
+            header('Location: http://localhost/peminjaman_buku/public/daftarAnggota');
+            exit;
+        }
+    }
+
+    public function getUbah()
+    {
+        echo json_encode($this->model('AnggotaModel')->getAnggotaById($_POST['id']));
+    }
 }
