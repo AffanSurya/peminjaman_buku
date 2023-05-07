@@ -1,6 +1,6 @@
 <ul class="list-group">
     <li class="list-group-item">
-        ya
+        <?= $data['nama'] ?>
     </li>
     <li class="list-group-item">A second item</li>
     <li class="list-group-item">A third item</li>
