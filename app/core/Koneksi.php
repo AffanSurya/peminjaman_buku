@@ -17,7 +17,6 @@ class Koneksi
         ];
         try {
             $this->dbh = new PDO($dsn, $this->user, $this->pass, $option);
-            echo 'Koneksi berhasil';
         } catch (PDOException $e) {
             die($e->getMessage());
         }
@@ -56,13 +55,26 @@ class Koneksi
 
     public function resultSet()
     {
-        $this->execute();
-        $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+        try {
+            $this->execute();
+            return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            die($e->getMessage());
+        }
     }
 
     public function single()
     {
-        $this->execute();
-        $this->stmt->fetch(PDO::FETCH_ASSOC);
+        try {
+            $this->execute();
+            return $this->stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function rowCount()
+    {
+        return $this->stmt->rowCount();
     }
 }
