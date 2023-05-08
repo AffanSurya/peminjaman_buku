@@ -6,7 +6,7 @@
 
 
         <div class="col-md-11">
-            <button type="button" class="btn btn-dark tampilModalTambahBuku float-end" data-bs-toggle="modal" data-bs-target="#formModal">
+            <button type="button" class="btn btn-dark tampilModalTambah float-end" data-bs-toggle="modal" data-bs-target="#formModal">
                 Tambah Buku
             </button>
         </div>
@@ -36,7 +36,7 @@
                                 <td class="text-center"><?= $buku['pengarang'] ?></td>
                                 <td class="text-center"><?= $buku['penerbit'] ?></td>
                                 <td class="text-center">
-                                    <a href="http://localhost/peminjaman_buku/public/buku/ubah/<?= $buku['kode_buku'] ?>" class="badge text-bg-dark tampilModalUbahBuku" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $buku['kode_buku'] ?>">Ubah</a>
+                                    <a href="http://localhost/peminjaman_buku/public/buku/ubah/<?= $buku['kode_buku'] ?>" class="badge text-bg-dark tampilModalUbah" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $buku['kode_buku'] ?>">Ubah</a>
                                     <a href="http://localhost/peminjaman_buku/public/buku/hapus/<?= $buku['kode_buku'] ?>" class="badge text-bg-danger" style="text-decoration: none;" onclick="return confirm(' Apakah anda yakin menghapus <?= $buku['judul'] ?> dari Daftar Buku?');">Hapus</a>
                                 </td>
                             </tr>
@@ -89,3 +89,8 @@
         </div>
     </div>
 </div>
+
+
+<!-- JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="http://localhost/peminjaman_buku/public/js/scriptBuku.js"></script>
