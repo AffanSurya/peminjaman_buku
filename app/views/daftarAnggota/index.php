@@ -2,39 +2,54 @@
 
     <h2>Daftar Anggota</h2>
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary tampilModalTambah" data-bs-toggle="modal" data-bs-target="#formModal">
-        Tambah Anggota
-    </button>
-    <div class="table-responsive">
-        <table class="table table-striped table-hover">
-            <thead>
-                <tr>
-                    <th scope="col">Id Anggota</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Jenis Kelamin</th>
-                    <th scope="col">Nomor Telepon</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Alamat</th>
-                    <th scope="col">Opsi</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($data['anggota'] as $anggota) : ?>
-                    <tr>
-                        <th scope="row"><?= $anggota['id_anggota'] ?></th>
-                        <td><?= $anggota['nama'] ?></td>
-                        <td><?= $anggota['jenis_kelamin'] ?></td>
-                        <td><?= $anggota['no_telepon'] ?></td>
-                        <td><?= $anggota['email'] ?></td>
-                        <td><?= $anggota['alamat'] ?></td>
-                        <td>
-                            <a href="http://localhost/peminjaman_buku/public/daftarAnggota/ubah/<?= $anggota['id_anggota'] ?>" class="badge text-bg-dark tampilModalUbah" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $anggota['id_anggota'] ?>">Ubah</a>
-                            <a href="http://localhost/peminjaman_buku/public/daftarAnggota/hapus/<?= $anggota['id_anggota'] ?>" class="badge text-bg-danger" style="text-decoration: none;" onclick="return confirm('Apakah anda yakin menghapus <?= $anggota['nama'] ?> dari Daftar anggota?');">Hapus</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+    <div class="row">
+
+
+        <div class="col-md-11">
+            <button type="button" class="btn btn-dark tampilModalTambah float-end" data-bs-toggle="modal" data-bs-target="#formModal">
+                Tambah Anggota
+            </button>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title"></h3>
+        </div>
+        <div class="panel-body">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr class="text-center">
+                            <th scope="col">Id Anggota</th>
+                            <th scope="col">Nama</th>
+                            <th scope="col">Jenis Kelamin</th>
+                            <th scope="col">Nomor Telepon</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Alamat</th>
+                            <th scope="col">Opsi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($data['anggota'] as $anggota) : ?>
+                            <tr>
+                                <th scope="row" class="text-center"><?= $anggota['id_anggota'] ?></th>
+                                <td><?= $anggota['nama'] ?></td>
+                                <td class="text-center"><?= $anggota['jenis_kelamin'] ?></td>
+                                <td class="text-center"><?= $anggota['no_telepon'] ?></td>
+                                <td class="text-center"><?= $anggota['email'] ?></td>
+                                <td><?= $anggota['alamat'] ?></td>
+                                <td class="text-center">
+                                    <a href="http://localhost/peminjaman_buku/public/daftarAnggota/ubah/<?= $anggota['id_anggota'] ?>" class="badge text-bg-dark tampilModalUbah" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $anggota['id_anggota'] ?>">Ubah</a>
+                                    <a href="http://localhost/peminjaman_buku/public/daftarAnggota/hapus/<?= $anggota['id_anggota'] ?>" class="badge text-bg-danger" style="text-decoration: none;" onclick="return confirm(' Apakah anda yakin menghapus <?= $anggota['nama'] ?> dari Daftar anggota?');">Hapus</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="panel-footer"></div>
     </div>
 </div>
 
@@ -46,11 +61,11 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data Anggota</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabelAnggota">Tambah Data Anggota</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="http://localhost/peminjaman_buku/public/daftarAnggota/tambah" method="post">
+                <form class="gantiActionAnggota" action="http://localhost/peminjaman_buku/public/daftarAnggota/tambah" method="post">
                     <input type="hidden" name="id_anggota" id="id_anggota">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" id="nama" name="nama" placeholder="Affan">
@@ -80,7 +95,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keluar</button>
-                <button type="submit" class="btn btn-primary buttonModalFooter">Tambah</button>
+                <button type="submit" class="btn btn-primary buttonModalFooterAnggota">Tambah</button>
                 </form>
             </div>
         </div>
