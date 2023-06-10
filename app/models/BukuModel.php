@@ -1,13 +1,13 @@
 <?php
 
-class BukuModel extends Koneksi
+class BukuModel extends Database
 {
     private $table = 'buku';
     private $db;
 
     public function __construct()
     {
-        $this->db = new Koneksi;
+        $this->db = new Database;
     }
 
     public function getAllBuku()

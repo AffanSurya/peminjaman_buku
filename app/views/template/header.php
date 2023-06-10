@@ -20,6 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="http://localhost/peminjaman_buku/public/home">Home</a>
+                    <a class="nav-link" href="http://localhost/peminjaman_buku/public/peminjaman">Daftar Peminjaman</a>
                     <a class="nav-link" href="http://localhost/peminjaman_buku/public/daftarAnggota">Daftar Anggota</a>
                     <a class="nav-link" href="http://localhost/peminjaman_buku/public/buku">Buku</a>
                 </div>

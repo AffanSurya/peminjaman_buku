@@ -1,6 +1,6 @@
 <?php
 
-class Koneksi
+class Database
 {
     private $dbh;
     private $stmt;
@@ -39,6 +39,9 @@ class Koneksi
                     break;
                 case is_null($value):
                     $type = PDO::PARAM_NULL;
+                    break;
+                    // case is_date($value):
+                    //     $type = PDO::PARAM_NULL;
                     break;
                 default:
                     $type = PDO::PARAM_STR;

@@ -1,13 +1,13 @@
 <?php
 
-class AnggotaModel extends Koneksi
+class AnggotaModel extends Database
 {
     private $table = 'anggota';
     private $db;
 
     public function __construct()
     {
-        $this->db = new Koneksi;
+        $this->db = new Database;
     }
 
     public function getAllAnggota()
