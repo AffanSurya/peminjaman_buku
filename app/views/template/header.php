@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="z-index: 100;">
         <div class="container-fluid container">
             <a class="navbar-brand" href="http://localhost/peminjaman_buku/public/home">PinBuk</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="http://localhost/peminjaman_buku/public/home">Home</a>
-                    <a class="nav-link" href="http://localhost/peminjaman_buku/public/peminjaman">Daftar Peminjaman</a>
+                    <a class="nav-link" href="http://localhost/peminjaman_buku/public/sewa">Daftar Penyewa</a>
                     <a class="nav-link" href="http://localhost/peminjaman_buku/public/daftarAnggota">Daftar Anggota</a>
                     <a class="nav-link" href="http://localhost/peminjaman_buku/public/buku">Buku</a>
                 </div>

@@ -1,24 +1,23 @@
-<div class="container mt-3">
+<div class="container mt-5">
 
-    <h2>Daftar Anggota</h2>
-    <!-- Button trigger modal -->
-    <div class="row">
-        <div class="col-md-11">
-            <button type="button" class="btn btn-dark tampilModalTambah float-end" data-bs-toggle="modal" data-bs-target="#formModal">
-                Tambah Anggota
-            </button>
-        </div>
-    </div>
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title"></h3>
+    <div class="panel panel-default ">
+        <div class="panel-heading" style="margin-top: 70px;">
+            <h3 class="panel-title">Daftar Anggota</h3>
         </div>
         <div class="panel-body">
+            <div class="row">
+                <div class="col-md-11">
+                    <button type="button" class="btn btn-dark tampilModalTambah float-end" data-bs-toggle="modal" data-bs-target="#formModal">
+                        Tambah Anggota
+                    </button>
+                </div>
+            </div>
+
             <div class="table-responsive">
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr class="text-center">
-                            <th scope="col">Id Anggota</th>
+                            <th style="width: 50px;" scope="col">Id Anggota</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Jenis Kelamin</th>
                             <th scope="col">Nomor Telepon</th>
@@ -59,7 +58,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Data Anggota</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="tombolSilang"></button>
             </div>
             <div class="modal-body">
                 <form action="http://localhost/peminjaman_buku/public/daftarAnggota/tambah" method="post">
@@ -91,7 +90,7 @@
                     </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keluar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="tombolKeluar">Keluar</button>
                 <button type="submit" class="btn btn-primary buttonModalFooter">Tambah</button>
                 </form>
             </div>
@@ -103,3 +102,12 @@
 <!-- JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="http://localhost/peminjaman_buku/public/js/scriptAnggota.js"></script>
+<!-- reload tombol keluar -->
+<script>
+    document.getElementById("tombolSilang").addEventListener("click", function() {
+        location.reload();
+    });
+    document.getElementById("tombolKeluar").addEventListener("click", function() {
+        location.reload();
+    });
+</script>

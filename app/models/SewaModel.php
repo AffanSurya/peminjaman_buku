@@ -18,13 +18,10 @@ class SewaModel extends Database
 
     public function tambahSewa($data)
     {
-        $this->db->query("INSERT INTO $this->table VALUES('', :nama, :judul, :tgl_sewa, :tgl_kembali, :status)");
+        $this->db->query("INSERT INTO $this->table VALUES('', :nama, :judul, NOW(), '', '', '')");
 
         $this->db->bind('nama', $data['nama']);
         $this->db->bind('judul', $data['judul']);
-        $this->db->bind('tgl_sewa', $data['tgl_sewa']);
-        $this->db->bind('tgl_kembali', $data['tgl_kembali']);
-        $this->db->bind('status', $data['status']);
 
         $this->db->execute();
 

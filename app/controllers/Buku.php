@@ -19,9 +19,9 @@ class Buku extends Controller
         }
     }
 
-    public function hapus($kode_buku)
+    public function hapus($isbn)
     {
-        if ($this->model('BukuModel')->hapusBuku($kode_buku) > 0) {
+        if ($this->model('BukuModel')->hapusBuku($isbn) > 0) {
             header('Location: http://localhost/peminjaman_buku/public/buku');
             exit;
         }

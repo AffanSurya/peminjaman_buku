@@ -18,16 +18,16 @@ class BukuModel extends Database
 
     public function getBukuById($id)
     {
-        $this->db->query("SELECT * FROM $this->table WHERE kode_buku = :kode_buku");
-        $this->db->bind('kode_buku', $id);
+        $this->db->query("SELECT * FROM $this->table WHERE isbn = :isbn");
+        $this->db->bind('isbn', $id);
         return $this->db->single();
     }
 
     public function tambahBuku($data)
     {
-        $this->db->query("INSERT INTO $this->table VALUES(:kode_buku, :judul, :pengarang, :penerbit)");
+        $this->db->query("INSERT INTO $this->table VALUES(:isbn, :judul, :pengarang, :penerbit)");
 
-        $this->db->bind('kode_buku', $data['kode_buku']);
+        $this->db->bind('isbn', $data['isbn']);
         $this->db->bind('judul', $data['judul']);
         $this->db->bind('pengarang', $data['pengarang']);
         $this->db->bind('penerbit', $data['penerbit']);
@@ -37,10 +37,10 @@ class BukuModel extends Database
         return $this->db->rowCount();
     }
 
-    public function hapusBuku($kode_buku)
+    public function hapusBuku($isbn)
     {
-        $this->db->query("DELETE FROM $this->table WHERE kode_buku = :kode_buku");
-        $this->db->bind('kode_buku', $kode_buku);
+        $this->db->query("DELETE FROM $this->table WHERE isbn = :isbn");
+        $this->db->bind('isbn', $isbn);
         $this->db->execute();
 
         return $this->db->rowCount();
@@ -49,17 +49,17 @@ class BukuModel extends Database
     public function ubahBuku($data)
     {
         $this->db->query("UPDATE $this->table SET 
-        kode_buku=:kode_buku,
+        -- isbn=:isbn,
         judul=:judul,
         pengarang=:pengarang,
-        penerbit=:penerbit WHERE kode_buku = :kode_buku
+        penerbit=:penerbit WHERE isbn = :isbn
         ");
 
-        $this->db->bind('kode_buku', $data['kode_buku']);
         $this->db->bind('judul', $data['judul']);
         $this->db->bind('pengarang', $data['pengarang']);
         $this->db->bind('penerbit', $data['penerbit']);
-        $this->db->bind('kode_buku', $data['kode_buku']);
+        $this->db->bind('isbn', $data['isbn']);
+        // $this->db->bind('isbnOld', $data['isbn']);
 
         $this->db->execute();
 
