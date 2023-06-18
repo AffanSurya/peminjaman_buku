@@ -58,9 +58,8 @@
             </div>
             <div class="modal-body">
                 <form action="http://localhost/peminjaman_buku/public/buku/tambah" method="post">
-                    <!-- <input type="hidden" class="form-control" id="isbn" name="isbn" placeholder="Bumi Manusia"> -->
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control " id="isbn" name="isbn" placeholder="123-345">
+                    <div class="form-floating mb-3" id="hidden">
+                        <input type="text" class="form-control" id="isbn" name="isbn" placeholder="123-345">
                         <label for="isbn">ISBN</label>
                     </div>
                     <div class="form-floating mb-3">
@@ -89,12 +88,3 @@
 <!-- JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="http://localhost/peminjaman_buku/public/js/scriptBuku.js"></script>
-<!-- reload tombol keluar -->
-<script>
-    document.getElementById("tombolSilang").addEventListener("click", function() {
-        location.reload();
-    });
-    document.getElementById("tombolKeluar").addEventListener("click", function() {
-        location.reload();
-    });
-</script>

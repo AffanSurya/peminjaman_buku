@@ -34,4 +34,13 @@ $(function () {
       },
     });
   });
+
+  //   reload tombol keluar
+  $('#tombolSilang').on('click', function () {
+    location.reload();
+  });
+
+  $('#tombolKeluar').on('click', function () {
+    location.reload();
+  });
 });
