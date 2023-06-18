@@ -16,10 +16,10 @@ class BukuModel extends Database
         return $this->db->resultSet();
     }
 
-    public function getBukuById($id)
+    public function getBukuById($isbn)
     {
         $this->db->query("SELECT * FROM $this->table WHERE isbn = :isbn");
-        $this->db->bind('isbn', $id);
+        $this->db->bind('isbn', $isbn, PDO::PARAM_STR);
         return $this->db->single();
     }
 

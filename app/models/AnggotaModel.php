@@ -16,10 +16,10 @@ class AnggotaModel extends Database
         return $this->db->resultSet();
     }
 
-    public function getAnggotaById($id)
+    public function getAnggotaById($id_anggota)
     {
         $this->db->query("SELECT * FROM $this->table WHERE id_anggota = :id_anggota");
-        $this->db->bind('id_anggota', $id);
+        $this->db->bind('id_anggota', $id_anggota);
         return $this->db->single();
     }
 

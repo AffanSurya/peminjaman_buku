@@ -1,5 +1,5 @@
-// auto ubah warna dengan id status
 $(function () {
+  // auto ubah warna dengan id status
   $('.status').each(function () {
     var status = $(this).text();
 
@@ -17,5 +17,15 @@ $(function () {
 
   $('#tombolKeluar').on('click', function () {
     location.reload();
+  });
+
+  // popover
+  $('a[data-bs-toggle="popover"]').popover({
+    container: 'body',
+    placement: 'right',
+    trigger: 'click',
+    content: function () {
+      return $(this).data('bs-content');
+    },
   });
 });

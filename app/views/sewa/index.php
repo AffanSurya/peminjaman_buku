@@ -38,6 +38,7 @@
                                             break;
                                         }
                                     } ?>
+                                    <a href=" http://localhost/peminjaman_buku/public/sewa/detailAnggota/<?= $sewa['id_anggota'] ?>" class="link-info " style="font-size: small;">Detail</a>
                                 </td>
                                 <td>
                                     <?php foreach ($data['buku'] as $buku) {
@@ -46,6 +47,7 @@
                                             break;
                                         }
                                     } ?>
+                                    <a href=" http://localhost/peminjaman_buku/public/sewa/detailBuku/<?= $sewa['isbn'] ?>" class="link-info " style="font-size: small;">Detail</a>
                                 </td>
                                 <td class="text-center"><?= $sewa['tgl_sewa'] ?></td>
                                 <td class="text-center"><?= $sewa['tgl_kembali'] ?></td>
@@ -103,7 +105,6 @@
         </div>
     </div>
 </div>
-
 
 <!-- JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
