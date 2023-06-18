@@ -58,8 +58,9 @@
             </div>
             <div class="modal-body">
                 <form action="http://localhost/peminjaman_buku/public/buku/tambah" method="post">
+                    <!-- <input type="hidden" class="form-control" id="isbn" name="isbn" placeholder="Bumi Manusia"> -->
                     <div class="form-floating mb-3">
-                        <input type="text" class="form-control" name="isbn" id="isbn">
+                        <input type="text" class="form-control " id="isbn" name="isbn" placeholder="123-345">
                         <label for="isbn">ISBN</label>
                     </div>
                     <div class="form-floating mb-3">
@@ -74,8 +75,6 @@
                         <input type="text" class="form-control" id="penerbit" name="penerbit" placeholder="Supar">
                         <label for="penerbit">Penerbit</label>
                     </div>
-
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="tombolKeluar">Keluar</button>

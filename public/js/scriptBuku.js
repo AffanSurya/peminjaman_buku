@@ -3,6 +3,7 @@ $(function () {
   $('.tampilModalTambah').on('click', function () {
     $('#exampleModalLabel').html('Tambah Data Buku');
     $('.buttonModalFooter').html('Tambah');
+    // $('.sembunyikan').attr('type', 'text');
     $('.modal-body form').attr(
       'action',
       'http://localhost/peminjaman_buku/public/buku/tambah'
@@ -12,6 +13,8 @@ $(function () {
   $('.tampilModalUbah').on('click', function () {
     $('#exampleModalLabel').html('Ubah Data Buku');
     $('.buttonModalFooter').html('Ubah');
+    // $('.modal-body ').attr('type', 'hidden');
+    $('input#isbn').hide();
     $('.modal-body form').attr(
       'action',
       'http://localhost/peminjaman_buku/public/buku/ubah'
@@ -25,11 +28,10 @@ $(function () {
       method: 'post',
       dataType: 'json',
       success: function (data) {
-        // $('#isbnOld').val(data.isbnOld);
-        $('#isbn').val(data.isbn);
         $('#judul').val(data.judul);
         $('#pengarang').val(data.pengarang);
         $('#penerbit').val(data.penerbit);
+        $('#isbn').val(data.isbn);
       },
     });
   });

@@ -27,7 +27,7 @@ class BukuModel extends Database
     {
         $this->db->query("INSERT INTO $this->table VALUES(:isbn, :judul, :pengarang, :penerbit)");
 
-        $this->db->bind('isbn', $data['isbn']);
+        $this->db->bind('isbn', $data['isbn'], PDO::PARAM_STR);
         $this->db->bind('judul', $data['judul']);
         $this->db->bind('pengarang', $data['pengarang']);
         $this->db->bind('penerbit', $data['penerbit']);
@@ -49,7 +49,6 @@ class BukuModel extends Database
     public function ubahBuku($data)
     {
         $this->db->query("UPDATE $this->table SET 
-        -- isbn=:isbn,
         judul=:judul,
         pengarang=:pengarang,
         penerbit=:penerbit WHERE isbn = :isbn
@@ -59,7 +58,6 @@ class BukuModel extends Database
         $this->db->bind('pengarang', $data['pengarang']);
         $this->db->bind('penerbit', $data['penerbit']);
         $this->db->bind('isbn', $data['isbn']);
-        // $this->db->bind('isbnOld', $data['isbn']);
 
         $this->db->execute();
 

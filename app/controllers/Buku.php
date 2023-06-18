@@ -4,7 +4,7 @@ class Buku extends Controller
 {
     public function index()
     {
-        $data['title'] = 'Buku | PinBuk';
+        $data['title'] = 'Daftar Buku | PinBuk';
         $data['buku'] = $this->model('BukuModel')->getAllBuku();
         $this->view('template/header', $data);
         $this->view('buku/index', $data);

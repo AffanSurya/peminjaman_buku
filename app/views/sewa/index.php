@@ -31,15 +31,29 @@
                         <?php foreach ($data['sewa'] as $sewa) : ?>
                             <tr>
                                 <th scope="row" class="text-center"><?= $sewa['kode_sewa'] ?></th>
-                                <td><?= $sewa['nama'] ?></td>
-                                <td><?= $sewa['judul'] ?></td>
+                                <td>
+                                    <?php foreach ($data['daftarAnggota'] as $anggota) {
+                                        if ($anggota['id_anggota'] === $sewa['id_anggota']) {
+                                            echo $anggota['nama'];
+                                            break;
+                                        }
+                                    } ?>
+                                </td>
+                                <td>
+                                    <?php foreach ($data['buku'] as $buku) {
+                                        if ($buku['isbn'] === $sewa['isbn']) {
+                                            echo $buku['judul'];
+                                            break;
+                                        }
+                                    } ?>
+                                </td>
                                 <td class="text-center"><?= $sewa['tgl_sewa'] ?></td>
                                 <td class="text-center"><?= $sewa['tgl_kembali'] ?></td>
                                 <td class="text-center"><?= $sewa['status'] ?></td>
                                 <td class="text-center"><?= $sewa['harga'] ?></td>
                                 <td class="text-center">
-                                    <a href="http://localhost/peminjaman_buku/public/sewa/ubah/<?= $sewa['kode_sewa'] ?>" class="badge text-bg-dark tampilModalUbah" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $sewa['kode_sewa']; ?>">Ubah</a>
-                                    <a href="http://localhost/peminjaman_buku/public/sewa/hapus/<?= $sewa['kode_sewa'] ?>" class="badge text-bg-danger" style="text-decoration: none;" onclick="return confirm('Apakah anda yakin menghapus sewa Buku <?= $sewa['judul'] ?> atas nama <?= $sewa['nama'] ?> dari Daftar sewa?');">Hapus</a>
+                                    <a href="http://localhost/peminjaman_buku/public/sewa/kembalikan/<?= $sewa['kode_sewa'] ?>" class="badge text-bg-success" style="text-decoration: none;" onclick="return confirm('Apakah anda yakin penyewa sudah mengembalikan buku dengan isbn: <?= $sewa['isbn'] ?> ?');">Pengembalian</a>
+                                    <a href="http://localhost/peminjaman_buku/public/sewa/hapus/<?= $sewa['kode_sewa'] ?>" class="badge text-bg-danger" style="text-decoration: none;" onclick="return confirm('Apakah anda yakin menghapus penyewa dengan Kode Sewa: <?= $sewa['kode_sewa'] ?> dari Daftar Penyewa?');">Hapus</a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -59,40 +73,30 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah sewa</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Tambah Sewa</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="tombolSilang"></button>
             </div>
             <div class="modal-body">
-                <form action="http://localhost/peminjaman_buku/public/peminjaman/tambah" method="post">
-                    <input type="hidden" name="id_anggota" id="id_anggota">
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Affan">
-                        <label for="nama">Nama</label>
-                    </div>
+                <form action="http://localhost/peminjaman_buku/public/sewa/tambah" method="post">
+                    <!-- <input type="hidden" name="kode_sewa" id="kode_sewa"> -->
 
-                    <select class="form-select mb-3" aria-label="Default select example " id="jenis_kelamin" name="jenis_kelamin">
-                        <option selected disabled>Jenis Kelamin</option>
-                        <option value="Laki-laki">Laki-laki</option>
-                        <option value="Perempuan">Perempuan</option>
+                    <select class="form-select mb-3" aria-label="Default select example" id="id_anggota" name="id_anggota">
+                        <option selected disabled>Pilih Anggota</option>
+                        <?php foreach ($data['daftarAnggota'] as $anggota) : ?>
+                            <option value="<?= $anggota['id_anggota'] ?>"><?= $anggota['nama'] ?> / <?= $anggota['id_anggota'] ?></option>
+                        <?php endforeach; ?>
                     </select>
 
-                    <div class="form-floating mb-3">
-                        <input type="number" class="form-control" id="no_telepon" name="no_telepon" placeholder="0812********" style=" appearance: textfield;">
-                        <label for="no_telepon">Nomor Telepon</label>
-                    </div>
+                    <select class="form-select mb-3" aria-label="Default select example" id="isbn" name="isbn">
+                        <option selected disabled>Pilih Buku</option>
+                        <?php foreach ($data['buku'] as $buku) : ?>
+                            <option value="<?= $buku['isbn'] ?>"><?= $buku['judul'] ?> / <?= $buku['isbn'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
 
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
-                        <label for="email">Email</label>
-                    </div>
-
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="alamat" name="alamat" placeholder="name@example.com">
-                        <label for="alamat">Alamat</label>
-                    </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keluar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="tombolKeluar">Keluar</button>
                 <button type="submit" class="btn btn-primary buttonModalFooter">Tambah</button>
                 </form>
             </div>
@@ -103,4 +107,13 @@
 
 <!-- JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="http://localhost/peminjaman_buku/public/js/scriptAnggota.js"></script>
+<!-- <script src="http://localhost/peminjaman_buku/public/js/scriptSewa.js"></script> -->
+<!-- reload tombol keluar -->
+<script>
+    document.getElementById("tombolSilang").addEventListener("click", function() {
+        location.reload();
+    });
+    document.getElementById("tombolKeluar").addEventListener("click", function() {
+        location.reload();
+    });
+</script>
