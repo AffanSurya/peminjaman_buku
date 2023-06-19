@@ -2,7 +2,7 @@
 
     <div class="panel panel-default ">
         <div class="panel-heading" style="margin-top: 70px;">
-            <h3 class="panel-title">Daftar Penyewa</h3>
+            <h3 class="panel-title"><?= $data['panel'] ?></h3>
         </div>
         <div class="panel-body">
             <div class="row">

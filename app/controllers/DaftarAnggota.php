@@ -5,6 +5,7 @@ class DaftarAnggota extends Controller
     public function index()
     {
         $data['title'] = 'Daftar Anggota | PinBuk';
+        $data['panel'] = $this->model('AnggotaModel')->panelTitle();
         $data['anggota'] = $this->model('AnggotaModel')->getAllAnggota();
         $this->view('template/header', $data);
         $this->view('daftarAnggota/index', $data);

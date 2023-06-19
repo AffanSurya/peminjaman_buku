@@ -5,6 +5,7 @@ class Sewa extends Controller
     public function index()
     {
         $data['title'] = 'Sewa | PinBuk';
+        $data['panel'] = $this->model('SewaModel')->panelTitle();
         $data['sewa'] = $this->model('SewaModel')->getAllSewa();
         $data['daftarAnggota'] = $this->model('AnggotaModel')->getAllAnggota();
         $data['buku'] = $this->model('BukuModel')->getAllbuku();

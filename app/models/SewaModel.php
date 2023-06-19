@@ -51,4 +51,9 @@ class SewaModel extends Database
 
         return $this->db->rowCount();
     }
+
+    public function panelTitle()
+    {
+        return 'Daftar Penyewa';
+    }
 }

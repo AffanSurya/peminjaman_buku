@@ -70,4 +70,9 @@ class AnggotaModel extends Database
 
         return $this->db->rowCount();
     }
+
+    public function panelTitle()
+    {
+        return 'Daftar Anggota';
+    }
 }

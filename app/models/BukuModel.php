@@ -63,4 +63,9 @@ class BukuModel extends Database
 
         return $this->db->rowCount();
     }
+
+    public function panelTitle()
+    {
+        return 'Daftar Buku';
+    }
 }

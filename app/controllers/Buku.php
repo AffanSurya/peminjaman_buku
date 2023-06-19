@@ -5,6 +5,7 @@ class Buku extends Controller
     public function index()
     {
         $data['title'] = 'Daftar Buku | PinBuk';
+        $data['panel'] = $this->model('BukuModel')->panelTitle();
         $data['buku'] = $this->model('BukuModel')->getAllBuku();
         $this->view('template/header', $data);
         $this->view('buku/index', $data);

@@ -100,4 +100,9 @@ class Database
 
         return $this;
     }
+
+    public function panelTitle()
+    {
+        echo 'Daftar';
+    }
 }
