@@ -18,12 +18,12 @@
                     <thead>
                         <tr class="text-center">
                             <th style="width: 50px;" scope="col">Id Anggota</th>
-                            <th scope="col">Nama</th>
-                            <th scope="col">Jenis Kelamin</th>
-                            <th scope="col">Nomor Telepon</th>
-                            <th scope="col">Email</th>
-                            <th scope="col">Alamat</th>
-                            <th scope="col">Opsi</th>
+                            <th scope="col" style="width: 300px;">Nama</th>
+                            <th scope="col" style="width: 120px;">Jenis Kelamin</th>
+                            <th scope="col" style="width: 130px;">Nomor Telepon</th>
+                            <th scope="col" style="width: 150px;">Email</th>
+                            <th scope="col" style="width: 200px;">Alamat</th>
+                            <th scope="col" style="width: 120px;">Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -31,9 +31,9 @@
                             <tr>
                                 <th scope="row" class="text-center"><?= $anggota['id_anggota'] ?></th>
                                 <td><?= $anggota['nama'] ?></td>
-                                <td class="text-center"><?= $anggota['jenis_kelamin'] ?></td>
-                                <td class="text-center"><?= $anggota['no_telepon'] ?></td>
-                                <td class="text-center"><?= $anggota['email'] ?></td>
+                                <td><?= $anggota['jenis_kelamin'] ?></td>
+                                <td><?= $anggota['no_telepon'] ?></td>
+                                <td> <?= $anggota['email'] ?></td>
                                 <td><?= $anggota['alamat'] ?></td>
                                 <td class="text-center">
                                     <a href="http://localhost/peminjaman_buku/public/daftarAnggota/ubah/<?= $anggota['id_anggota'] ?>" class="badge text-bg-dark tampilModalUbah" style="text-decoration: none;" data-bs-toggle="modal" data-bs-target="#formModal" data-id="<?= $anggota['id_anggota']; ?>">Ubah</a>

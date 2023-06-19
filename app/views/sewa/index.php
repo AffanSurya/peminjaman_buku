@@ -13,7 +13,7 @@
                 </div>
             </div>
 
-            <div class="table-responsive">
+            <div class="table-responsive mt-4">
                 <table class="table table-striped table-hover">
                     <thead>
                         <tr class="text-center">
@@ -24,7 +24,7 @@
                             <th scope="col">Tanggal Kembali</th>
                             <th scope="col">Status</th>
                             <th scope="col">Harga</th>
-                            <th scope="col">Opsi</th>
+                            <th scope="col" style="width: 100px;">Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
