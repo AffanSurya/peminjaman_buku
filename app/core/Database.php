@@ -7,6 +7,7 @@ class Database
     private $database = 'peminjaman_buku';
     private $user = 'root';
     private $pass = '';
+    private $table;
 
     public function __construct()
     {
@@ -76,5 +77,27 @@ class Database
     public function rowCount()
     {
         return $this->stmt->rowCount();
+    }
+
+
+
+    /**
+     * Get the value of table
+     */
+    public function getTable()
+    {
+        return $this->table;
+    }
+
+    /**
+     * Set the value of table
+     *
+     * @return  self
+     */
+    public function setTable($table)
+    {
+        $this->table = $table;
+
+        return $this;
     }
 }

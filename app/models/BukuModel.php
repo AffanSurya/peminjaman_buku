@@ -2,30 +2,30 @@
 
 class BukuModel extends Database
 {
-    private $table = 'buku';
     private $db;
 
     public function __construct()
     {
         $this->db = new Database;
+        $this->setTable('buku');
     }
 
     public function getAllBuku()
     {
-        $this->db->query('SELECT * FROM ' . $this->table);
+        $this->db->query("SELECT * FROM {$this->getTable()}");
         return $this->db->resultSet();
     }
 
     public function getBukuById($isbn)
     {
-        $this->db->query("SELECT * FROM $this->table WHERE isbn = :isbn");
+        $this->db->query("SELECT * FROM {$this->getTable()} WHERE isbn = :isbn");
         $this->db->bind('isbn', $isbn, PDO::PARAM_STR);
         return $this->db->single();
     }
 
     public function tambahBuku($data)
     {
-        $this->db->query("INSERT INTO $this->table VALUES(:isbn, :judul, :pengarang, :penerbit)");
+        $this->db->query("INSERT INTO {$this->getTable()} VALUES(:isbn, :judul, :pengarang, :penerbit)");
 
         $this->db->bind('isbn', $data['isbn'], PDO::PARAM_STR);
         $this->db->bind('judul', $data['judul']);
@@ -39,7 +39,7 @@ class BukuModel extends Database
 
     public function hapusBuku($isbn)
     {
-        $this->db->query("DELETE FROM $this->table WHERE isbn = :isbn");
+        $this->db->query("DELETE FROM {$this->getTable()} WHERE isbn = :isbn");
         $this->db->bind('isbn', $isbn);
         $this->db->execute();
 
@@ -48,7 +48,7 @@ class BukuModel extends Database
 
     public function ubahBuku($data)
     {
-        $this->db->query("UPDATE $this->table SET 
+        $this->db->query("UPDATE {$this->getTable()} SET 
         judul=:judul,
         pengarang=:pengarang,
         penerbit=:penerbit WHERE isbn = :isbn
