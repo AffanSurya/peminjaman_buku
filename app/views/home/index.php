@@ -1,39 +1,33 @@
-<header class="bg-dark text-white py-5">
-    <div class="container">
-        <h1 class="display-4">Welcome to My Website</h1>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquet arcu enim, vel commodo nunc commodo in.</p>
-        <a href="#" class="btn btn-primary">Get Started</a>
-    </div>
-</header>
+<section id="hero" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
 
-<section class="py-5">
-    <div class="container">
-        <h2 class="text-center mb-4">Features</h2>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Feature 1</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id lectus vel neque maximus tristique.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Feature 2</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id lectus vel neque maximus tristique.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Feature 3</h5>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum id lectus vel neque maximus tristique.</p>
-                    </div>
-                </div>
+        <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+            <div class="col-xl-6 col-lg-8 mt-5">
+                <h1 class="text-center text-light">PinBuk</h1>
             </div>
         </div>
+
+        <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
+            <div class="col-xl-2 col-md-4">
+                <div class="icon-box">
+                    <i class="ri-store-line"></i>
+                    <h3><a href="" class="badge text-bg-warning" style="text-decoration: none;">Lorem Ipsum</a></h3>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-4">
+                <div class="icon-box">
+                    <i class="ri-bar-chart-box-line"></i>
+                    <h3><a href="" class="badge text-bg-warning" style="text-decoration: none;">Dolor Sitema</a></h3>
+                </div>
+            </div>
+            <div class="col-xl-2 col-md-4">
+                <div class="icon-box">
+                    <i class="ri-calendar-todo-line"></i>
+                    <h3><a href="" class="badge text-bg-warning" style="text-decoration: none;">Sedare Perspiciatis</a></h3>
+                </div>
+            </div>
+
+        </div>
+
     </div>
 </section>

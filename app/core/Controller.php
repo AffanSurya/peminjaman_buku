@@ -1,7 +1,7 @@
 <?php
 
 
-class Controller
+abstract class Controller
 {
     public function view($view, $data = [])
     {
@@ -14,4 +14,6 @@ class Controller
 
         return new $model;
     }
+
+    abstract public function index();
 }

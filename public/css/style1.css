@@ -1,0 +1,53 @@
+/* CSS untuk menghilangkan tombol panah di input tipe number */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url('http://localhost/peminjaman_buku/public/assets/img/book-bg.jpg')
+    top center;
+  background-size: cover;
+  position: relative;
+}
+
+#hero:before {
+  content: '';
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero .container {
+  position: relative;
+  padding-top: 74px;
+  text-align: center;
+}
+
+#hero h1 {
+  margin: 0;
+  margin-top: -150px;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 64px;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar-brand {
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #856404;
+}

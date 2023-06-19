@@ -7,7 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $data['title'] ?></title>
     <link href="http://localhost/peminjaman_buku/public/css/bootstrap.css" rel="stylesheet">
-    <link href="http://localhost/peminjaman_buku/public/css/style.css" rel="stylesheet">
+    <link href="http://localhost/peminjaman_buku/public/css/style1.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
 </head>
 
 <body>
@@ -19,7 +22,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="http://localhost/peminjaman_buku/public/home">Home</a>
+                    <a class="nav-link active text-warning" aria-current="page" href="http://localhost/peminjaman_buku/public/home">Home</a>
                     <a class="nav-link" href="http://localhost/peminjaman_buku/public/sewa">Daftar Penyewa</a>
                     <a class="nav-link" href="http://localhost/peminjaman_buku/public/daftarAnggota">Daftar Anggota</a>
                     <a class="nav-link" href="http://localhost/peminjaman_buku/public/buku">Buku</a>

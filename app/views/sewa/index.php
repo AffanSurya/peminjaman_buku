@@ -38,7 +38,7 @@
                                             break;
                                         }
                                     } ?>
-                                    <a href=" http://localhost/peminjaman_buku/public/sewa/detailAnggota/<?= $sewa['id_anggota'] ?>" class="link-info " style="font-size: small;">Detail</a>
+                                    <a href=" http://localhost/peminjaman_buku/public/sewa/detailAnggota/<?= $sewa['id_anggota'] ?>" class="link-primary " style="font-size: small;">Detail</a>
                                 </td>
                                 <td>
                                     <?php foreach ($data['buku'] as $buku) {
@@ -47,7 +47,7 @@
                                             break;
                                         }
                                     } ?>
-                                    <a href=" http://localhost/peminjaman_buku/public/sewa/detailBuku/<?= $sewa['isbn'] ?>" class="link-info " style="font-size: small;">Detail</a>
+                                    <a href=" http://localhost/peminjaman_buku/public/sewa/detailBuku/<?= $sewa['isbn'] ?>" class="link-primary " style="font-size: small;">Detail</a>
                                 </td>
                                 <td class="text-center"><?= $sewa['tgl_sewa'] ?></td>
                                 <td class="text-center"><?= $sewa['tgl_kembali'] ?></td>
