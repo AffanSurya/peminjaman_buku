@@ -49,7 +49,7 @@
         </div>
     </div>
     <div class="bg-warning text-center text-dark py-2">
-        <p class="mb-0">&copy; 2023 Created by Affan.</p>
+        <p class="mb-0">&copy; 2023 Created by Lfa.</p>
     </div>
 </footer>
 
