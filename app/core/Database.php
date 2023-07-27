@@ -4,6 +4,8 @@ class Database
 {
     private $dbh;
     private $stmt;
+    private $host = "localhost";
+    private $port = "3306";
     private $database = 'peminjaman_buku';
     private $user = 'root';
     private $pass = '';
@@ -11,7 +13,7 @@ class Database
 
     public function __construct()
     {
-        $dsn = 'mysql:host=localhost;dbname=' . $this->database;;
+        $dsn = "mysql:host=$this->host:$this->port;dbname=$this->database";
         $option = [
             PDO::ATTR_PERSISTENT => true, //menjaga koneksi
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
@@ -21,6 +23,11 @@ class Database
         } catch (PDOException $e) {
             die($e->getMessage());
         }
+    }
+
+    public function __destruct()
+    {
+        $this->dbh = null;
     }
 
     public function query($query)

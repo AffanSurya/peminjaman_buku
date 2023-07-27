@@ -4,14 +4,14 @@
         <div class="row">
             <div class="col-lg-4">
                 <h5 class="text-warning">About Us</h5>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.</p>
+                <p>support realize told motion again experiment accurate note welcome getting particles sand thumb silent writing dear western known decide part scene consist shape joined</p>
             </div>
             <div class="col-lg-4">
                 <h5 class="text-warning">Contact</h5>
                 <ul class="list-unstyled">
                     <li><span class="fw-bold">Phone:</span> 081232453156</li>
-                    <li><span class="fw-bold">Email:</span> pinbuk@gmail.com</li>
-                    <li><span class="fw-bold">Address:</span> Kare</li>
+                    <li><span class="fw-bold">Email:</span> detna@ketcoh.gg</li>
+                    <li><span class="fw-bold">Address:</span> Jamaica</li>
                 </ul>
             </div>
             <div class="col-lg-4">
